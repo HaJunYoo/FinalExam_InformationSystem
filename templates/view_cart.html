@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% block main %}
+
+    <div class="container pt-5">
+        <div class="row">
+
+        <h1>Cart</h1>
+
+            <table class="table">
+                <thead>
+                <tr>
+               <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Subtitle</th>
+                <th scope="col">Isbn13</th>
+                <th scope="col">Price($)</th>
+                <th scope="col">Url</th>
+                <th scope="col">Genre</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for data in dataset %}
+                    <tr id = {{forloop.counter}}>
+                    <td class="row-data">{{forloop.counter}}</td>
+                    <td class="row-data">{{ data.title }}</td>
+                    <td class="row-data">{{ data.subtitle }}</td>
+                    <td class="row-data">{{ data.isbn13 }}</td>
+                    <td class="row-data">{{ data.price }}$</td>
+                    <td class="row-data">{{ data.url }}</td>
+                    <td class="row-data">{{ data.genre }}</td>
+                    <td class="row-data"> <a class="btn btn-sm btn-danger delete" id="{{ data.id }}">Delete</a></td>
+                    </tr>
+
+                {% endfor %}
+
+                <tr>
+                    <td class="row-data">Total </td>
+                    <td class="row-data"></td>
+                    <td class="row-data"></td>
+                    <td class="row-data"></td>
+                    <td class="row-data">{{total.price__sum|floatformat:2}}$</td>
+                    <td class="row-data"><div class = "balance" > Balance :{{ profile.balance|floatformat:2}}$ </div></td>
+                    <td class="row-data"> <td class="row-data"> <input type="button" class="checkBtn" value="Purchase"/></td></td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+<div class="row mt-2">
+        <div class="col-12">
+            <nav>
+                <ul class="pagination justify-content-center">
+                    {% if dataset.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?p={{dataset.previous_page_number }}">previous</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#">previous</a>
+                    </li>
+                    {% endif %}
+                    <li class="page-item">
+                        <a class="page-link" href="#">{{dataset.number}}/{{dataset.paginator.num_pages}}</a>
+                    </li>
+                    {% if dataset.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?p={{dataset.next_page_number }}">next</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#">next</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+<script>
+// delete
+// 클릭하면 delete selector 실행
+
+$(document).on('click', '.delete', function(){
+        $id = $(this).attr('id'); // Get the id from the attribute “name”
+        $.ajax({
+            url:  "delete/" + $id +'/' , // defined url
+            type: 'POST',
+            // data에는 csrf 토큰만 남겨놓은 것으로 delete를 수행
+            data: {
+                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+            },
+            success: function(){
+                alert("Deleted!");
+                location.reload();
+
+            } // 성공하면 read 함수 실행
+        });
+    });
+
+$(".checkBtn").click(function() {
+
+    var checkprice = {{total.price__sum|floatformat:2}}
+    var user_balance = {{profile.balance}}
+    if (user_balance >= checkprice) {
+        $.ajax({
+            type:'POST',
+            {#app = predict, reference url namespace => submit_prediction #}
+
+            url:'{% url "posts:cart_calculate"%}',
+            data:{
+                checkprice : checkprice,
+                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                action: 'post'
+            },
+
+            success:function(json) {
+                alert("Purchase Sucess");
+                location.reload();
+            },
+            error : function(xhr,errmsg,err) {
+                console.log(error);
+            }
+        });
+    }
+    else { alert("Balance not enough!"); }
+
+})
+
+
+</script>
+
+{% endblock %} 

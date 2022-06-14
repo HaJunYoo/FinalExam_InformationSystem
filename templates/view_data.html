@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block main %}
+<button id="button">Count & Calculate</button>
+
+<table id="data" class="display">
+<thead>
+    <tr>
+        <th>Title</th>
+        <th>Subtitle</th>
+        <th>ISBN</th>
+        <th>Price</th>
+        <th>Url</th>
+    </tr>
+<thead>
+</table>
+
+<script >
+$(document).ready(function() {
+    var table = $('#data').DataTable( {
+        ajax:  {
+          url: 'https://api.itbook.store/1.0/search/data',
+          {# JSON source, 공공 데이터 api를 받아옴  #}
+          dataSrc: 'books'
+            {### Parent Key#}
+       },
+        columns: [
+        { data: "title" },
+        { data: "subtitle" },
+        { data: "isbn13" },
+        { data: "price" },
+        { data: "url" }
+        ],{## Children key#}
+        "order": [[2, 'desc']],
+        }
+    );
+
+
+    $('#data tbody').on('click', 'tr', function () {
+        $(this).toggleClass('selected');
+    });
+
+    $('#button').click(function () {
+
+        let sell = 0;
+        let regex = /[^0-9]/g;
+        let select_obj = table.rows('.selected').data();
+
+        for (let i =0; i < select_obj.length; i++ ){
+
+        let testString = select_obj[i].price;
+        let temp = parseFloat(testString.replace(/[^0-9.]/g, ""));
+        sell = sell + temp;
+        console.log(temp);
+        }
+
+        console.log(table.rows('.selected').data());
+        alert(table.rows('.selected').data().length + ' row(s) selected');
+        alert('Total : '+ sell + '$');
+    });
+
+});
+</script>
+
+{% endblock %}

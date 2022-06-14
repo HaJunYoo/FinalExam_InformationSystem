@@ -1,0 +1,87 @@
+{
+  "error": "0",
+  "total": "373",
+  "page": "1",
+  "books": [
+    {
+      "title": "Algorithms, 4th Edition",
+      "subtitle": "Essential Information about Algorithms and Data Structures",
+      "isbn13": "9780321573513",
+      "price": "$55.49",
+      "image": "https://itbook.store/img/books/9780321573513.png",
+      "url": "https://itbook.store/books/9780321573513"
+    },
+    {
+      "title": "Python Algorithms",
+      "subtitle": "Mastering Basic Algorithms in the Python Language",
+      "isbn13": "9781430232377",
+      "price": "$18.00",
+      "image": "https://itbook.store/img/books/9781430232377.png",
+      "url": "https://itbook.store/books/9781430232377"
+    },
+    {
+      "title": "Python Algorithms, 2nd Edition",
+      "subtitle": "Mastering Basic Algorithms in the Python Language",
+      "isbn13": "9781484200568",
+      "price": "$33.75",
+      "image": "https://itbook.store/img/books/9781484200568.png",
+      "url": "https://itbook.store/books/9781484200568"
+    },
+    {
+      "title": "Data Mining Algorithms in C++",
+      "subtitle": "Data Patterns and Algorithms for Modern Applications",
+      "isbn13": "9781484233146",
+      "price": "$27.44",
+      "image": "https://itbook.store/img/books/9781484233146.png",
+      "url": "https://itbook.store/books/9781484233146"
+    },
+    {
+      "title": "Pro Machine Learning Algorithms",
+      "subtitle": "A Hands-On Approach to Implementing Algorithms in Python and R",
+      "isbn13": "9781484235638",
+      "price": "$34.99",
+      "image": "https://itbook.store/img/books/9781484235638.png",
+      "url": "https://itbook.store/books/9781484235638"
+    },
+    {
+      "title": "JavaScript Data Structures and Algorithms",
+      "subtitle": "An Introduction to Understanding and Implementing Core Data Structure and Algorithm Fundamentals",
+      "isbn13": "9781484239872",
+      "price": "$26.76",
+      "image": "https://itbook.store/img/books/9781484239872.png",
+      "url": "https://itbook.store/books/9781484239872"
+    },
+    {
+      "title": "Introducing Algorithms in C",
+      "subtitle": "A Step by Step Guide to Algorithms in C",
+      "isbn13": "9781484256220",
+      "price": "$26.91",
+      "image": "https://itbook.store/img/books/9781484256220.png",
+      "url": "https://itbook.store/books/9781484256220"
+    },
+    {
+      "title": "Modern Data Mining Algorithms in C++ and CUDA C",
+      "subtitle": "Recent Developments in Feature Extraction and Selection Algorithms for Data Science",
+      "isbn13": "9781484259870",
+      "price": "$32.58",
+      "image": "https://itbook.store/img/books/9781484259870.png",
+      "url": "https://itbook.store/books/9781484259870"
+    },
+    {
+      "title": "Clojure Data Structures and Algorithms Cookbook",
+      "subtitle": "25 recipes to deeply understand and implement advanced algorithms in Clojure",
+      "isbn13": "9781785281457",
+      "price": "$47.52",
+      "image": "https://itbook.store/img/books/9781785281457.png",
+      "url": "https://itbook.store/books/9781785281457"
+    },
+    {
+      "title": "Mastering Machine Learning Algorithms",
+      "subtitle": "Expert techniques to implement popular machine learning algorithms and fine-tune your models",
+      "isbn13": "9781788621113",
+      "price": "$44.99",
+      "image": "https://itbook.store/img/books/9781788621113.png",
+      "url": "https://itbook.store/books/9781788621113"
+    }
+  ]
+}

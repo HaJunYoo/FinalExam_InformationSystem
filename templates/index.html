@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block main %}
+{% load static %}
+
+<h3>Brief Description</h3>
+<br><br>
+
+1. Information, Algorithm, Data -> Using Datatable, Bootstrap
+<br><br>
+
+2. Cart_algorithm, Cart_Information, Cart_Data, Cart -> using Bootstrap
+<br><br>
+3. Sign up -> login -> add a book to Cart -> purchase -> profile balance
+<br><br>
+4. Two ways to get the api
+        <br>
+    <li>one is getting in the template by data table by ajax url</li>
+    <img src="{% static 'image/getapi1.png' %}" alt = "iris image" width = "30%">
+        <br>
+    <li>the other one is getting in the views.py using 'requests' library</li>
+    <img src="{% static 'image/getapi2.png' %}" alt = "iris image" width = "30%">
+
+
+{% endblock %}

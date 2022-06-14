@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<!-- Modal -->
+
+{#prediction results pop screen 나타나는 창#}
+
+{#The Modal plugin is a dialog box/popup window that is displayed on top of the current page#}
+
+<div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+                <div class="col-lg-5">
+                {% load static %}
+                <img src="{% static 'image/user.jpg' %}" alt = "user image" width = "90%">
+                </div>
+                <div class="col-lg-7">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                        </div>
+                        <form action="" id="post-form" >
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-user" id="username"
+                                    placeholder="Username">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" class="form-control form-control-user" id="emailaddress"
+                                    placeholder="Email Address">
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="password" class="form-control form-control-user"
+                                        id="password1" placeholder="Password">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="password" class="form-control form-control-user"
+                                        id="password2" placeholder="Repeat Password">
+                                </div>
+                            </div>
+                            <input type="submit" class="btn btn-primary btn-user btn-block"
+                            placeholder="Register">
+
+                            <hr>
+
+                        </form>
+                        <hr>
+
+                        <div class="text-center">
+                            <a class="small" href={% url 'accounts:login' %}>Already have an account? Login!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{#<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">#}
+{##}
+{#    <div class="modal-dialog" role="document">#}
+{#        <div class="modal-content">#}
+{#            <div class="modal-header">#}
+{#                <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>#}
+{#                <button type="button" class="close" data-dismiss="modal" aria-label="Close">#}
+{#                    <span aria-hidden="true">&times;</span>#}
+{#                </button>#}
+{#            </div>#}
+{##}
+{#            <div class="modal-body">#}
+{##}
+{#                <h5>registeration success! </h5>#}
+{#                <div>User Name <span id="un"></span></div>#}
+{#            </div>#}
+{#            <div class="modal-footer">#}
+{#                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>#}
+{#                <a class="btn btn-primary" href={% url 'accounts:login' %} role="button">Log in</a>#}
+{#            </div>#}
+{##}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+
+<script>
+
+    $(document).on('submit', '#post-form',function(e){
+        {# submit -> 연쇄 다음 이벤트 묵살 -> ajax 실행 #}
+        e.preventDefault();
+        $.ajax({
+            type:'POST',
+            {#app = predict, reference url namespace => account: signup #}
+            url:'{% url "accounts:signup" %}',
+            data:{
+                username:$('#username').val(),
+                email:$('#emailaddress').val(),
+                password:$('#password1').val(),
+                repeat:$('#password2').val(),
+
+                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                action: 'post'
+            },
+
+            success:function(json) {
+                {#form 보냄이 성공하면 적은 내용 사라짐#}
+                document.forms["post-form"].reset();
+                {#document.getElementById("un").innerHTML = json['username'];#}
+                alert('Sign up Success!');
+
+            },
+            error : function(xhr,errmsg,err) {
+                console.log(err);
+            }
+        });
+    })
+
+</script>
+
+
+
+{% endblock %}

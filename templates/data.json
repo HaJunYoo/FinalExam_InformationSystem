@@ -1,0 +1,87 @@
+{
+  "error": "0",
+  "total": "2562",
+  "page": "1",
+  "books": [
+    {
+      "title": "Introduction to Data Science",
+      "subtitle": "Data Analysis and Prediction Algorithms with R",
+      "isbn13": "1001605784278",
+      "price": "$0.00",
+      "image": "https://itbook.store/img/books/1001605784278.png",
+      "url": "https://itbook.store/books/1001605784278"
+    },
+    {
+      "title": "Graph Databases For Beginners",
+      "subtitle": "The #1 Platform for Connected Data",
+      "isbn13": "1001606307637",
+      "price": "$0.00",
+      "image": "https://itbook.store/img/books/1001606307637.png",
+      "url": "https://itbook.store/books/1001606307637"
+    },
+    {
+      "title": "Critical Data Literacy",
+      "subtitle": "Strategies to Effectively Interpret and Evaluate Data Visualizations",
+      "isbn13": "1001651514190",
+      "price": "$0.00",
+      "image": "https://itbook.store/img/books/1001651514190.png",
+      "url": "https://itbook.store/books/1001651514190"
+    },
+    {
+      "title": "Programming Skills for Data Science",
+      "subtitle": "Start Writing Code to Wrangle, Analyze, and Visualize Data with R",
+      "isbn13": "9780135133101",
+      "price": "$40.99",
+      "image": "https://itbook.store/img/books/9780135133101.png",
+      "url": "https://itbook.store/books/9780135133101"
+    },
+    {
+      "title": "Learning iCloud Data Management",
+      "subtitle": "A Hands-On Guide to Structuring Data for iOS and OS X",
+      "isbn13": "9780321889119",
+      "price": "$24.07",
+      "image": "https://itbook.store/img/books/9780321889119.png",
+      "url": "https://itbook.store/books/9780321889119"
+    },
+    {
+      "title": "Learning Core Data for iOS",
+      "subtitle": "A Hands-On Guide to Building Core Data Applications",
+      "isbn13": "9780321905765",
+      "price": "$3.72",
+      "image": "https://itbook.store/img/books/9780321905765.png",
+      "url": "https://itbook.store/books/9780321905765"
+    },
+    {
+      "title": "Beautiful Data",
+      "subtitle": "The Stories Behind Elegant Data Solutions",
+      "isbn13": "9780596157111",
+      "price": "$18.99",
+      "image": "https://itbook.store/img/books/9780596157111.png",
+      "url": "https://itbook.store/books/9780596157111"
+    },
+    {
+      "title": "Visualizing Data",
+      "subtitle": "Exploring and Explaining Data with the Processing Environment",
+      "isbn13": "9780596514556",
+      "price": "$19.98",
+      "image": "https://itbook.store/img/books/9780596514556.png",
+      "url": "https://itbook.store/books/9780596514556"
+    },
+    {
+      "title": "Data Analysis with Open Source Tools",
+      "subtitle": "A hands-on guide for programmers and data scientists",
+      "isbn13": "9780596802356",
+      "price": "$3.20",
+      "image": "https://itbook.store/img/books/9780596802356.png",
+      "url": "https://itbook.store/books/9780596802356"
+    },
+    {
+      "title": "Communicating with Data",
+      "subtitle": "Making Your Case With Data",
+      "isbn13": "9781098101855",
+      "price": "$69.99",
+      "image": "https://itbook.store/img/books/9781098101855.png",
+      "url": "https://itbook.store/books/9781098101855"
+    }
+  ]
+}

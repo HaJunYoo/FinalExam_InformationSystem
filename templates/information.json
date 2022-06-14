@@ -1,0 +1,88 @@
+// https://api.itbook.store/1.0/search/information
+{
+  "error": "0",
+  "total": "809",
+  "page": "1",
+  "books": [
+    {
+      "title": "A Graduate Course in Applied Cryptography",
+      "subtitle": "The indispensable tool used to protect information in computing systems",
+      "isbn13": "1001605608336",
+      "price": "$0.00",
+      "image": "https://itbook.store/img/books/1001605608336.png",
+      "url": "https://itbook.store/books/1001605608336"
+    },
+    {
+      "title": "Information Security The Complete Reference, 2nd Edition",
+      "subtitle": "",
+      "isbn13": "9780071784351",
+      "price": "$41.62",
+      "image": "https://itbook.store/img/books/9780071784351.png",
+      "url": "https://itbook.store/books/9780071784351"
+    },
+    {
+      "title": "Information Dashboard Design",
+      "subtitle": "The Effective Visual Communication of Data",
+      "isbn13": "9780596100162",
+      "price": "$4.50",
+      "image": "https://itbook.store/img/books/9780596100162.png",
+      "url": "https://itbook.store/books/9780596100162"
+    },
+    {
+      "title": "Tomcat: The Definitive Guide, 2nd Edition",
+      "subtitle": "Vital Information for Tomcat Programmers & Administrators",
+      "isbn13": "9780596101060",
+      "price": "$4.44",
+      "image": "https://itbook.store/img/books/9780596101060.png",
+      "url": "https://itbook.store/books/9780596101060"
+    },
+    {
+      "title": "Optimizing and Accessing Information Technology",
+      "subtitle": "Improving Business Project Execution",
+      "isbn13": "9781118000014",
+      "price": "$49.36",
+      "image": "https://itbook.store/img/books/9781118000014.png",
+      "url": "https://itbook.store/books/9781118000014"
+    },
+    {
+      "title": "Filtering, Control and Fault Detection with Randomly Occurring Incomplete Information",
+      "subtitle": "",
+      "isbn13": "9781118647912",
+      "price": "$105.57",
+      "image": "https://itbook.store/img/books/9781118647912.png",
+      "url": "https://itbook.store/books/9781118647912"
+    },
+    {
+      "title": "Getting an Information Security Job For Dummies",
+      "subtitle": "",
+      "isbn13": "9781119002819",
+      "price": "$19.74",
+      "image": "https://itbook.store/img/books/9781119002819.png",
+      "url": "https://itbook.store/books/9781119002819"
+    },
+    {
+      "title": "Healthcare Information Technology Exam Guide, 2nd Edition",
+      "subtitle": "For CHTS and CAHIMS Certifications",
+      "isbn13": "9781259836978",
+      "price": "$30.97",
+      "image": "https://itbook.store/img/books/9781259836978.png",
+      "url": "https://itbook.store/books/9781259836978"
+    },
+    {
+      "title": "Practical SharePoint 2010 Information Architecture",
+      "subtitle": "",
+      "isbn13": "9781430241768",
+      "price": "$44.82",
+      "image": "https://itbook.store/img/books/9781430241768.png",
+      "url": "https://itbook.store/books/9781430241768"
+    },
+    {
+      "title": "Managing Risk and Information Security",
+      "subtitle": "Protect to Enable",
+      "isbn13": "9781430251132",
+      "price": "$31.34",
+      "image": "https://itbook.store/img/books/9781430251132.png",
+      "url": "https://itbook.store/books/9781430251132"
+    }
+  ]
+}

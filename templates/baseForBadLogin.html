@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+{#        <!-- Plugin for color scale -->#}
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+        
+{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>#}
+{##}
+{#    <!-- A functional reactive model library. github.com/curran/model -->#}
+{#    <script src="https://curran.github.io/model/cdn/model-v0.2.4.js"></script>#}
+
+    <title>Iris prediction</title>
+
+    <style>
+     .my_dataviz {
+      float:left;}
+     .legend {
+      display:inline-block; width:250px; height:250px; margin-left:10px;}
+     .header_graph { margin-left:4%; }
+     {#<!-- Tooltip style -->#}
+     .tooltip {
+      background-color: black;
+      border: none;
+      border-radius: 5px;
+      padding: 15px;
+      min-width: 400px;
+      text-align: left;
+      color: white;
+        }
+
+    </style>
+
+    </head>
+    <body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+{#prediction | results(db) 헤더 탭 생성#}
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Click this button! <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    {% if user.is_authenticated %}
+                    <span class="badge bg-secondary">{{user.username}}</span>
+                    {% else %}
+                    <span class="badge bg-secondary">Do Login</span>
+                    {% endif %}
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    {% block main %}
+    {% endblock %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>

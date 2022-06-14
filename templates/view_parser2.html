@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block main %}
+
+    <div class="container pt-5">
+        <div class="row">
+
+        <h1>Information Books</h1>
+
+            <table class="table">
+                <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Subtitle</th>
+                <th scope="col">Isbn13</th>
+                <th scope="col">Price</th>
+                <th scope="col">Url</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for data in api %}
+                    <tr id = {{forloop.counter}}>
+                    <td class="row-data">{{forloop.counter}}</td>
+                    <td class="row-data">{{ data.title }}</td>
+                    <td class="row-data">{{ data.subtitle }}</td>
+                    <td class="row-data">{{ data.isbn13 }}</td>
+                    <td class="row-data">{{ data.price }}</td>
+                    <td class="row-data">{{ data.url }}</td>
+                    <td class="row-data"> <input type="button" class="checkBtn" value="Click"/></td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+<script>
+
+    $(".checkBtn").click(function() {
+
+        var str = ""
+        var tdArr = new Array();    // 배열 선언
+        var checkBtn = $(this);
+
+        // checkBtn.parent() : checkBtn의 부모는 <td>이다.
+        // checkBtn.parent().parent() : <td>의 부모이므로 <tr>이다.
+        var tr = checkBtn.parent().parent();
+        var td = tr.children();
+
+        console.log("클릭한 Row의 모든 데이터 : "+tr.text());
+
+        var id = td.eq(0).text();
+        var title = td.eq(1).text();
+        var subtitle = td.eq(2).text();
+        var isbn13 = td.eq(3).text();
+        var price = td.eq(4).text();
+        var url = td.eq(5).text();
+
+        $.ajax({
+            type:'POST',
+            {#app = predict, reference url namespace => submit_prediction #}
+
+            url:'{% url "posts:cart_algorithm2" cartuser.id%}',
+            data:{
+                id: id,
+                title: title,
+                subtitle: subtitle,
+                isbn13: isbn13,
+                price : price,
+                url : url,
+
+                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                action: 'post'
+            },
+
+            success:function(json) {
+                alert("Data send Sucess");
+            },
+            error : function(xhr,errmsg,err) {
+                console.log(error);
+            }
+        });
+    })
+
+</script>
+
+
+{% endblock %} 
